@@ -1,0 +1,82 @@
+package liveauto;
+
+import java.io.Reader;
+import java.time.Duration;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class TestColorsClass {
+	
+	static WebDriver driver;
+	
+	public static void launchSite(String url) {
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\\\\\\\JavaProject\\\\\\\\Automation\\\\\\\\drivers\\\\\\\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.get(url);
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(5000));
+		new WebDriverWait(driver, Duration.ofMillis(10)).until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe[starts-with(@id,'sp_message')]")));
+		new WebDriverWait(driver, Duration.ofMillis(10)).until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@title=\"Yes, I Accept\"]"))).click();
+		//driver.findElement(By.xpath("//button[@title=\"Yes, I Accept\"]")).click();
+		driver.switchTo().defaultContent();
+		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
+		System.out.println(driver.getTitle());
+		
+	}
+	
+	public static void readValues() {
+		List<WebElement> columns = driver.findElements(By.xpath("//table/thead/tr/th"));
+		//Iterator<WebElement> it = columns.iterator();
+		for (int i =0; i<columns.size();i++){
+			System.out.println(columns.get(i).toString());
+			
+		}
+		
+		for (int j =0 ; j<columns.size();j++) {
+				String value = null;
+				List<WebElement> valueList = driver.findElements(By.xpath("//table/tbody/tr/td[2]/span"));
+				for (int k =0;k<valueList.size();k++) {
+					value = valueList.get(k).getText();
+					System.out.println(value);
+				}
+				
+				
+				
+				String value2 = null;
+				List<WebElement> valueList2 = driver.findElements(By.xpath("//table/tbody/tr/td[3]/span"));
+				for (int l =0;l<valueList2.size();l++) {
+					value2 = valueList2.get(l).getText();
+					System.out.println(value2);
+				
+			}
+		
+		}
+		
+		
+	}
+	
+	
+	
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Website URL");
+		String url = sc.next();
+		
+		launchSite(url);
+		readValues();
+		
+		
+	}
+
+}

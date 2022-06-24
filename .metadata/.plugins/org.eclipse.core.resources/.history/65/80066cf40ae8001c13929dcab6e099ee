@@ -1,0 +1,12 @@
+package com.anil.automation;
+
+public class CalculatorTest {
+	
+	@Test
+	
+	public void additionTest(int a,int b) {
+		System.out.println(add(a,b));
+		
+	}
+
+}

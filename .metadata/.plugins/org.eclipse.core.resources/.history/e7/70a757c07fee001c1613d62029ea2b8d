@@ -1,0 +1,22 @@
+package com.anil;
+
+public class InheritTestClass extends InheritClass {
+
+	
+	public void add2(int a, int b) {
+		System.out.println(a + b);
+	}
+	
+	private void sub2(int a, int b) {
+		System.out.println(a - b);
+	}
+	
+	protected void multi2(int a, int b) {
+		System.out.println(a * b); 
+	}
+	
+	void devide2(int a , int b) {
+		System.out.println(a/b);
+	}
+
+}

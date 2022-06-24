@@ -1,0 +1,15 @@
+package com.anil;
+
+public class InheritTestClass extends InheritClass {
+
+	int result = 0;
+	
+	result = add(3, 2);
+			
+	public static void main(String[] args) {
+
+		
+		
+	}
+
+}

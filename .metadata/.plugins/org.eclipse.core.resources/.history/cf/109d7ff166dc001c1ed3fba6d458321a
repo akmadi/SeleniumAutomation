@@ -1,0 +1,30 @@
+package com.anil;
+
+import java.util.Scanner;
+
+public class Factorial {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("Enter Number");
+
+		int num = sc.nextInt();
+		
+		factorialCalc(num);
+		
+
+	}
+
+	private static void factorialCalc(int num) {
+		// TODO Auto-generated method stub
+		
+		while (num >1) {
+			return num * (num -1);
+		}
+		
+	}
+
+}

@@ -1,0 +1,21 @@
+package com.anil;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+
+public class DateClass {
+	
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		LocalDate dt = LocalDate.now();
+		System.out.println(dt);
+		
+		LocalTime lt = LocalTime.now();
+		System.out.println(lt);
+
+	}
+
+}

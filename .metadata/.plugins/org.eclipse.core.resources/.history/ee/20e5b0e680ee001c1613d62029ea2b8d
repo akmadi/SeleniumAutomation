@@ -1,0 +1,34 @@
+package com.anil;
+
+public class InheritTestClass extends InheritClass {
+
+	
+	@Override
+	public int add(int a, int b) {
+		// TODO Auto-generated method stub
+		System.out.println(a + b);
+		return super.add(a, b);
+	}
+	
+	public void add2(int a, int b) {
+	}
+	
+
+	
+	private void sub2(int a, int b) {
+		System.out.println(a - b);
+	}
+	
+	protected void multi2(int a, int b) {
+		System.out.println(a * b); 
+	}
+	
+	void devide2(int a , int b) {
+		System.out.println(a/b);
+	}
+	
+	/*
+	 * default void remainder(int a, int b) { System.out.println(a%b); }
+	 */
+
+}

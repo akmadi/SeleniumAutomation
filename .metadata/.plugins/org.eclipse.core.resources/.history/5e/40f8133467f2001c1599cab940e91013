@@ -1,0 +1,140 @@
+package liveauto;
+
+import java.io.Reader;
+import java.time.Duration;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Scanner;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.Color;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class TestColorsClass {
+	
+	static WebDriver driver;
+	public static void launchSite(String url) {
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\\\\\\\JavaProject\\\\\\\\Automation\\\\\\\\drivers\\\\\\\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.get(url);
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(5000));
+		new WebDriverWait(driver, Duration.ofMillis(10)).until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.xpath("//iframe[starts-with(@id,'sp_message')]")));
+		new WebDriverWait(driver, Duration.ofMillis(10)).until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@title=\"Yes, I Accept\"]"))).click();
+		//driver.findElement(By.xpath("//button[@title=\"Yes, I Accept\"]")).click();
+		driver.switchTo().defaultContent();
+		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
+		System.out.println(driver.getTitle());
+		
+	}
+	
+	public static void readValues() {
+		int changeIndex=0;
+		int netChangeIndex =0;
+		List<WebElement> columns = driver.findElements(By.xpath("//table/thead/tr/th"));
+		//Iterator<WebElement> it = columns.iterator();
+		for (int i =0; i<columns.size();i++){
+			System.out.println(columns.get(i).getText());
+			if (columns.get(i).getText().equalsIgnoreCase("Change")) {
+				changeIndex = i;
+			} else if (columns.get(i).getText().equalsIgnoreCase("Net Change")) {
+				netChangeIndex = i;
+			}
+			
+		}
+		
+		for (int j =0 ; j<columns.size();j++) {
+				String value = null;
+				double test =0; 
+				String color = null;
+				List<WebElement> valueList = driver.findElements(By.xpath("//table/tbody/tr/td["+changeIndex+"]/span"));
+				for (int k =0;k<valueList.size();k++) {
+					value = valueList.get(k).getText();
+					test = Double.parseDouble(value);
+					color = valueList.get(k).getCssValue("Background");
+					System.out.println("Color is "+color);
+					String [] rgb = color.replace("rgb(","").replace(")", "").split(",");
+					int r = Integer.parseInt(rgb[0].trim());
+					int g = Integer.parseInt(rgb[1].trim());
+					int b = Integer.parseInt(rgb[2].split(" ")[1].trim());
+					String hexColor = "#" + Integer.toHexString(r) + Integer.toHexString(g) + Integer.toHexString(b) ;
+					if(test>=0) {
+						System.out.println("Positive value " +test +"and the color is "+hexColor);
+						
+					} else if (test<0) {
+						System.out.println("Negetive value" +test +"and the color is "+hexColor);
+					}
+				}
+				
+				System.out.println("change Index"+changeIndex);
+				System.out.println("Net Change index "+netChangeIndex);
+				
+				//String value2 = null, netcolor=null;
+				
+				List<WebElement> valueList2 = driver.findElements(By.xpath("//table/tbody/tr/td["+netChangeIndex+"]/span"));
+				validatePageData(valueList2);
+		
+		}
+		
+		driver.close();
+	}
+
+	public static void validatePageData(List<WebElement> valueList2) {
+		String value2;
+		String netcolor;
+		for (int l =0;l<valueList2.size();l++) {
+			value2 = valueList2.get(l).getText();
+			netcolor = valueList2.get(l).getCssValue("Background");
+			System.out.println("Color is "+netcolor);
+			System.out.println(netcolor);
+			String [] rgb2 = netcolor.replace("rgb(","").replace(")", "").split(",");
+			int r2 = Integer.parseInt(rgb2[0].trim());
+			int g2 = Integer.parseInt(rgb2[1].trim());
+			int b2 = Integer.parseInt(rgb2[2].split(" ")[1].trim());
+			String hexColor2 = "#" + Integer.toHexString(r2) + Integer.toHexString(g2) + Integer.toHexString(b2) ;
+			System.out.println("Net Color code"+hexColor2);
+			if (value2.contains("+")) {
+				if(hexColor2.equalsIgnoreCase("#9cf4dc")) {
+					System.out.println("A positive value" + value2 +" is shown and the color is Green");
+				} else
+					System.out.println("A positive value" + value2 +" is shown and the color is not Green");
+				//green is expected
+			} else if(value2.contains("-")) {
+				if(hexColor2.equalsIgnoreCase("#ffe1e1")) {
+					System.out.println("A Negetive value" + value2 +" is shown and the color is Red");
+				} else
+					System.out.println("A Negetive value" + value2 +" is shown and the color is not Red");
+				//red is expected
+			} else {
+				System.out.println("No Change");
+				if(hexColor2.equalsIgnoreCase("#9cf4dc")) {
+					System.out.println("Value shown is" + value2 +" and the color is Green");
+				} else
+					System.out.println("Value shown is" + value2 +" and the color is not Green");
+				//green is expected
+			}
+		
+}
+	}
+	
+	
+	
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Website URL");
+		String url = sc.next();
+		
+		launchSite(url);
+		readValues();
+		sc.close();
+		
+	}
+
+}

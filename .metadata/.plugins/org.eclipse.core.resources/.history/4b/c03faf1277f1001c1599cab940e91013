@@ -1,0 +1,10 @@
+package liveauto;
+
+public class TestColorsClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

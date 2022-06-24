@@ -1,0 +1,23 @@
+package com.anil;
+
+public class sampleMethod {
+	
+	public static void main (String[] args) {
+		System.out.println(testRecurse(10));
+	}
+
+	private static int testRecurse(int i) {
+		int sum = 0 ;
+		
+		while (i>10) {
+			sum = i + testRecurse(i-1);
+			--i;
+			
+		}
+		return sum;
+		
+		// TODO Auto-generated method stub
+		
+	}
+
+}

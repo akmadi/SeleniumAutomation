@@ -1,0 +1,28 @@
+package cucumbertest;
+
+import java.awt.RenderingHints.Key;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+
+public class SearchSeleniumTest {
+	
+	static WebDriver driver;
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "C:\\\\JavaProject\\\\Automation\\\\drivers\\\\chromedriver.exe");
+		
+		driver.get("https://www.google.com");
+		
+		driver.findElement(By.id("q"));
+		
+		driver.findElement(By.id("q")).sendKeys("Test");
+		
+		driver.findElement(By.id("q")).sendKeys(Keys.ENTER);
+
+		
+		
+		
+	}
+
+}

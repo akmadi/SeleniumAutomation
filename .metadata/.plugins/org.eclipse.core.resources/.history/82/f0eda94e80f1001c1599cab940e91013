@@ -1,0 +1,66 @@
+package liveauto;
+
+import java.util.Iterator;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class TestColorsClass {
+	
+	WebDriver driver;
+	
+	public void launchSite(String url) {
+		System.setProperty("webdriver.driver.chrome", "C:\\\\\\\\JavaProject\\\\\\\\Automation\\\\\\\\drivers\\\\\\\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.get(url);
+		driver.manage().window().maximize();
+		
+	}
+	
+	public void readValues() {
+		List<WebElement> columns = driver.findElements(By.xpath("//table/thead/tr/th"));
+		Iterator<WebElement> it = columns.iterator();
+		List<String> cols = null; 
+		for (int i =0; i<columns.size();i++){
+			cols.add(columns.get(i).toString());
+		}
+		
+		for (int j =0 ; j<cols.size();j++) {
+			if (cols.get(j).equalsIgnoreCase("Change")) {
+				String value = null;
+				List<WebElement> valueList = driver.findElements(By.xpath("//table/tbody/tr/td[2]/span"));
+				for (int k =0;k<valueList.size();k++) {
+					value = valueList.get(k).getText();
+					System.out.println(value);
+				}
+				
+				
+				
+			} else if (cols.get(j).equalsIgnoreCase("Net Change")){
+				String value2 = null;
+				List<WebElement> valueList = driver.findElements(By.xpath("//table/tbody/tr/td[3]/span"));
+				for (int l =0;l<valueList.size();l++) {
+					value2 = valueList.get(l).getText();
+					System.out.println(value2);
+				
+			}
+		}
+		
+		
+	}
+	
+	
+	
+
+	public static void main(String[] args) {
+
+		
+		
+		
+		
+	}
+
+}

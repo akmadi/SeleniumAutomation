@@ -1,0 +1,49 @@
+package com.anil;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+
+public class CollectionMethods {
+	
+	public void arrayListTest() {
+	
+	ArrayList<String> alist = new ArrayList<String>();
+	
+	alist.add("Anil");
+	
+	alist.add("Sunil");
+	
+	alist.add("Ram");
+	
+	alist.add("User");
+	
+	System.out.println(alist.size());
+	
+	Iterator<String> it = alist.iterator();
+	
+	
+	String[] arr = (String[]) alist.toArray(new String[0]);	
+	
+	System.out.println(arr.toString());
+	
+	while(it.hasNext()) {
+		
+		System.out.println(it.next());
+	}
+	
+	
+	
+	
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		CollectionMethods cmet = new CollectionMethods();
+		cmet.arrayListTest();
+		
+
+	}
+
+}

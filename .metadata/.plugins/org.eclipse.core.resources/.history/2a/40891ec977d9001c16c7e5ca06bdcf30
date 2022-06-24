@@ -1,0 +1,21 @@
+package com.anil;
+
+public class sampleMethod {
+	
+	public static void main (String[] args) {
+		System.out.println(testRecurse(10));
+	}
+
+	private static int testRecurse(int i) {
+		
+		if (i>0) {
+			return i + testRecurse(i-1);
+			
+		} else 
+			return 0;
+		
+		// TODO Auto-generated method stub
+		
+	}
+
+}

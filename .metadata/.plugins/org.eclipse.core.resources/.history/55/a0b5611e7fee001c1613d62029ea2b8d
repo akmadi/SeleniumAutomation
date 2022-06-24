@@ -1,0 +1,13 @@
+package com.anil;
+
+public class InheritTestClass extends InheritClass {
+
+	public static void main(String[] args) {
+
+		
+		
+		
+		
+	}
+
+}

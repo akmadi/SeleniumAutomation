@@ -1,0 +1,19 @@
+package com.anil;
+
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.http.HttpRequest.BodyPublishers;
+
+public class RestClass {
+
+	public static void main(String[] args) throws URISyntaxException {
+
+		
+		HttpRequest request = (HttpRequest) HttpRequest.newBuilder()
+				.uri(new URI(""));
+		
+		
+
+	}
+
+}

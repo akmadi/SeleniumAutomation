@@ -1,0 +1,23 @@
+package com.anil.automation;
+
+import static org.testng.Assert.assertEquals;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class CalculatorTest {
+	
+	ClaculatorClass calc = new ClaculatorClass();
+	
+	@Test
+	
+	public void additionTest() {
+		int exp = 20;
+		int act = 0; 
+		act = calc.add(10,20);
+		Assert.assertEquals(exp, act);
+		
+	}
+	
+	
+
+}

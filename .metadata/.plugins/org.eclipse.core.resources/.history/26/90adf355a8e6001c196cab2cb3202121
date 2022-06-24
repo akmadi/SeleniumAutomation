@@ -1,0 +1,23 @@
+package com.anil;
+
+public class ObjectComparisionClass {
+
+	public static void main(String[] args) {
+
+		ObjectComparisionClass obj1 = new ObjectComparisionClass();
+		
+		ObjectComparisionClass obj2 = new ObjectComparisionClass();
+		
+		if (obj1.equals(obj2)) {
+			System.out.println("They are equal!");
+		} else {
+			System.out.println("Not equal!!");
+			System.out.println(obj1);
+			
+			System.out.println(obj2);
+		}
+		
+		
+	}
+
+}

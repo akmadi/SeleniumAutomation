@@ -1,0 +1,21 @@
+package com.anil;
+
+import java.text.NumberFormat;
+
+public class CurrencyConverter {
+	
+	
+	
+	
+	
+
+	public static void main(String[] args) {
+		// TOhttps://marketplace.eclipse.org/marketplace-client-intro?mpc_install=4008412DO Auto-generated method stub
+		
+		NumberFormat locale = NumberFormat.getCurrencyInstance();
+		
+		System.out.println();
+
+	}
+
+}

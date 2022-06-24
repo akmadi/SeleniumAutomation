@@ -1,0 +1,18 @@
+package cucumbertest;
+
+import org.openqa.selenium.WebDriver;
+
+public class SearchSeleniumTest {
+	
+	WebDriver driver;
+	System.setProperty("webdriver.chrome.driver", "C:\\\\JavaProject\\\\Automation\\\\drivers\\\\chromedriver.exe");
+	
+	driver.get("");
+	public static void main(String[] args) {
+
+		
+		
+		
+	}
+
+}

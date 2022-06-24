@@ -1,0 +1,31 @@
+package com.anil;
+
+import java.util.ArrayList;
+
+public class ArrayClass {
+	
+public void arrayListEx() {
+	
+	ArrayList<String> str = new ArrayList<String>();
+	
+	str.add("Name");
+	str.add("Designation");
+	
+	str.set(1,"Organization");
+	
+}
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		
+		
+		System.out.println(str.get(1));
+		
+		System.out.println(str);
+
+	}
+
+}

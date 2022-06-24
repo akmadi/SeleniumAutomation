@@ -1,0 +1,16 @@
+package com.anil.automation;
+
+import static org.testng.Assert.assertTrue;
+
+public class CalculatorTest {
+	
+	@Test
+	
+	public void additionTest(int a,int b) {
+		System.out.println(add(a,b));
+		assertTrue(true);
+	}
+	
+	
+
+}

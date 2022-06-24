@@ -1,0 +1,39 @@
+package cucumbertest.stepDefinition;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class TestStepsClass {
+	
+	WebDriver driver;
+
+	@Given("Open Google search home page")
+	public void open_google_search_home_page() {
+		
+		System.setProperty("webdriver.chrome.driver", "C:\\\\JavaProject\\\\Automation\\\\drivers\\\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.get("https://www.google.com");
+		driver.manage().window().maximize();
+//	    throw new io.cucumber.java.PendingException();
+	}
+	
+	@When("I search for a keyword on the search")
+	public void i_search_for_a_test_on_the_search() {
+		
+		
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("I verify the results to list speed test related pages")
+	public void i_verify_the_results_to_list_speed_test_related_pages() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	
+}

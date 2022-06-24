@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-06-09T12:53:29 EDT" name="Default suite" finished-at="2022-06-09T12:53:29 EDT" duration-ms="67">
+    <groups>
+    </groups>
+    <test started-at="2022-06-09T12:53:29 EDT" name="Default test" finished-at="2022-06-09T12:53:29 EDT" duration-ms="67">
+      <class name="com.anil.automation.CalculatorTest">
+        <test-method is-config="true" signature="sample()[pri:0, instance:com.anil.automation.CalculatorTest@6aba2b86]" started-at="2022-06-09T12:53:29 EDT" name="sample" finished-at="2022-06-09T12:53:29 EDT" duration-ms="8" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sample -->
+        <test-method is-config="true" signature="beforeCla()[pri:0, instance:com.anil.automation.CalculatorTest@6aba2b86]" started-at="2022-06-09T12:53:29 EDT" name="beforeCla" finished-at="2022-06-09T12:53:29 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeCla -->
+        <test-method is-config="true" signature="beforeMeth()[pri:0, instance:com.anil.automation.CalculatorTest@6aba2b86]" started-at="2022-06-09T12:53:29 EDT" name="beforeMeth" finished-at="2022-06-09T12:53:29 EDT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMeth -->
+        <test-method signature="additionTest()[pri:0, instance:com.anil.automation.CalculatorTest@6aba2b86]" started-at="2022-06-09T12:53:29 EDT" name="additionTest" finished-at="2022-06-09T12:53:29 EDT" duration-ms="10" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- additionTest -->
+        <test-method is-config="true" signature="afterMet()[pri:0, instance:com.anil.automation.CalculatorTest@6aba2b86]" started-at="2022-06-09T12:53:29 EDT" name="afterMet" finished-at="2022-06-09T12:53:29 EDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMet -->
+        <test-method is-config="true" signature="beforeMeth()[pri:0, instance:com.anil.automation.CalculatorTest@6aba2b86]" started-at="2022-06-09T12:53:29 EDT" name="beforeMeth" finished-at="2022-06-09T12:53:29 EDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMeth -->
+        <test-method signature="secondAddTest()[pri:0, instance:com.anil.automation.CalculatorTest@6aba2b86]" started-at="2022-06-09T12:53:29 EDT" name="secondAddTest" finished-at="2022-06-09T12:53:29 EDT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- secondAddTest -->
+        <test-method is-config="true" signature="afterMet()[pri:0, instance:com.anil.automation.CalculatorTest@6aba2b86]" started-at="2022-06-09T12:53:29 EDT" name="afterMet" finished-at="2022-06-09T12:53:29 EDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMet -->
+        <test-method is-config="true" signature="afterCla()[pri:0, instance:com.anil.automation.CalculatorTest@6aba2b86]" started-at="2022-06-09T12:53:29 EDT" name="afterCla" finished-at="2022-06-09T12:53:29 EDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterCla -->
+        <test-method is-config="true" signature="afterTes()[pri:0, instance:com.anil.automation.CalculatorTest@6aba2b86]" started-at="2022-06-09T12:53:29 EDT" name="afterTes" finished-at="2022-06-09T12:53:29 EDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTes -->
+      </class> <!-- com.anil.automation.CalculatorTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

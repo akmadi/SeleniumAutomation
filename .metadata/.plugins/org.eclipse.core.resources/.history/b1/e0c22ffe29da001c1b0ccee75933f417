@@ -1,0 +1,38 @@
+package com.anil;
+
+import java.io.PrintStream;
+import java.util.ArrayList;
+
+public class ArrayClass {
+	
+public void arrayListEx() {
+	
+	static ArrayList<String> str = new ArrayList<String>();
+	
+	str.add("Name");
+	str.add("Designation");
+	
+	str.set(1,"Organization");
+	
+}
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		
+		
+		
+		try {
+			System.out.println(str.get(1));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		System.out.println(str);
+
+	}
+
+}

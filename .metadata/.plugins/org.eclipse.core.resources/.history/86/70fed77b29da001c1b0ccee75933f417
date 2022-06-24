@@ -1,0 +1,23 @@
+package com.anil;
+
+import java.util.ArrayList;
+
+public class ArrayClass {
+	
+
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		
+		ArrayList<String> str = new ArrayList<String>();
+		
+		str.add("Name");
+		str.add("Designation");
+		
+		System.out.println(str.get(1));
+
+	}
+
+}
